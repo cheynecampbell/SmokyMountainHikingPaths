@@ -7,7 +7,7 @@ import DeckGL from '@deck.gl/react';
 import {PolygonLayer} from '@deck.gl/layers';
 import {TripsLayer} from '@deck.gl/geo-layers';
 
-// Set your mapbox token here
+// Set your mapbox token here - added
 const MAPBOX_TOKEN = pk.eyJ1IjoiY2hleW5lLWNhbXBiZWxsIiwiYSI6ImNrOHMxYW9wYTA0OWkzZXBhenJyemFsbnIifQ.cXgp6qu6dAmDTAh-ID2M3g
 
 // Source data CSV
