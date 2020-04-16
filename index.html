@@ -1,22 +1,28 @@
 
 <html>
   <head>
-    <script src="https://unpkg.com/deck.gl@~5.2.0/deckgl.min.js"></script>
-    <!-- only if base map is needed -->
+    <!-- deck.gl stuff-->
+    <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
+    <!-- basemap stuff -->
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css" rel="stylesheet" />
   </head>
+  
   <body>
     <div id="container" style="width: 100vw; height: 100vh;"></div>
   </body>
+  
   <script type="text/javascript">
 
+// initialize a deck.gl instance
 const deckgl = new deck.DeckGL({
   container: 'container',
   longitude: -122.45,
   latitude: 37.8,
   zoom: 12,
   layers: [
+    
+    
     new deck.ScatterplotLayer({
       data: [
         {position: [-122.45, 37.8], color: [255, 0, 0], radius: 1000}
@@ -27,8 +33,14 @@ const deckgl = new deck.DeckGL({
         {position: [-122.45, 37.8], text: 'Hello World'}
       ]
     })
+    
+    
+    
   ]
 });
+
+
+    
 
   </script>
 </html>
