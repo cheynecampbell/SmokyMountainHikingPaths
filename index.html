@@ -18,30 +18,29 @@
   
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2hleW5lLWNhbXBiZWxsIiwiYSI6ImNrOHMxYW9wYTA0OWkzZXBhenJyemFsbnIifQ.cXgp6qu6dAmDTAh-ID2M3g';
+    
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/cjaudgl840gn32rnrepcb9b9g', // the outdoors-v10 style but without Hillshade layers
-    center: [-119.5591, 37.715],
+    center: [-83.482900, 35.610781],
     zoom: 9
     });
 
     map.on('load', function() {
-    map.addSource('dem', {
-    'type': 'raster-dem',
-    'url': 'mapbox://mapbox.terrain-rgb'
+      map.addSource('dem', {
+        'type': 'raster-dem',
+        'url': 'mapbox://mapbox.terrain-rgb'
     });
-    map.addLayer(
-    {
-    'id': 'hillshading',
-    'source': 'dem',
-    'type': 'hillshade'
-    // insert below waterway-river-canal-shadow;
-    // where hillshading sits in the Mapbox Outdoors style
-    },
-    'waterway-river-canal-shadow'
-    );
+      
+    map.addLayer( {
+      'id': 'hillshading',
+      'source': 'dem',
+      'type': 'hillshade'
+    }, 
+    'waterway-river-canal-shadow');
     });
   </script>
+  
 </body>
   
 </html>
