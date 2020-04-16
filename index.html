@@ -1,46 +1,24 @@
-
-<html>
-  <head>
-    <!-- deck.gl stuff-->
-    <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
-    <!-- basemap stuff -->
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css" rel="stylesheet" />
-  </head>
+<!doctype html>
+<html lang="en">
   
-  <body>
-    <div id="container" style="width: 100vw; height: 100vh;"></div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Great Smokey Mountain National Park Hiking Trails</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {margin: 0; font-family: sans-serif; width: 100vw; height: 100vh; overflow: hidden;}
+    .tooltip {pointer-events: none; position: absolute; z-index: 9; font-size: 12px; padding: 8px; background: #000; color: #fff; min-width: 160px; max-height: 240px; overflow-y: hidden;}
+  </style>
+</head>
   
-  <script type="text/javascript">
-
-// initialize a deck.gl instance
-const deckgl = new deck.DeckGL({
-  container: 'container',
-  longitude: -122.45,
-  latitude: 37.8,
-  zoom: 12,
-  layers: [
-    
-    
-    new deck.ScatterplotLayer({
-      data: [
-        {position: [-122.45, 37.8], color: [255, 0, 0], radius: 1000}
-      ]
-    }),
-    new deck.TextLayer({
-      data: [
-        {position: [-122.45, 37.8], text: 'Hello World'}
-      ]
-    })
-    
-    
-    
-  ]
-});
-
-
-    
-
-  </script>
+<body>
+<div id="app"></div>
+</body>
+  
+<script type="text/javascript" src="app.js"></script>
+  
+<script type="text/javascript">
+  App.renderToDOM(document.getElementById('app'));
+</script>
+  
 </html>
